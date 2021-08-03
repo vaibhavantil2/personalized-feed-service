@@ -118,6 +118,11 @@ class OrderAdmin extends AbstractAdmin
                 ->add('shippingFax')
                 ->add('shippingEmail')
                 ->add('shippingMobile')
+            ->end()
+            ->with('order.form.group_shipping_location', ['collapsed' => true])
+                ->add('shippingName')
+                ->add('shippingLocationLongitude')
+                ->add('shippingLocationLatitude')
             ->end();
     }
 
