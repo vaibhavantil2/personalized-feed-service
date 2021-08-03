@@ -117,6 +117,18 @@ abstract class BaseOrder implements OrderInterface
     /**
      * @var string
      */
+    
+   protected $shipping_longitude;
+
+    /**
+     * @var string
+     */
+    
+    protected $shipping_latitude;
+
+    /**
+     * @var string
+     */
     protected $billingCity;
 
     /**
