@@ -118,13 +118,13 @@ abstract class BaseOrder implements OrderInterface
      * @var string
      */
     
-   protected $shipping_longitude;
+   protected $geo_longitude;
 
     /**
      * @var string
      */
     
-    protected $shipping_latitude;
+    protected $geo_latitude;
 
     /**
      * @var string
