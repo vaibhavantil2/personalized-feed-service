@@ -310,7 +310,17 @@ abstract class BaseOrder implements OrderInterface
 
     public function getPaymentMethod()
     {
-        return $this->paymentMethod;
+        return $this -> paymentMethod;
+    }
+    
+    public function getGeoLongitude()
+    {
+        return $this -> longitude;
+    }
+    
+    public function getGeoLatitude()
+    {
+        return $this -> latitude;
     }
 
     public function setDeliveryMethod($deliveryMethod): void
