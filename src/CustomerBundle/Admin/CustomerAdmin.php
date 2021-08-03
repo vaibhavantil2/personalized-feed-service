@@ -44,6 +44,7 @@ class CustomerAdmin extends AbstractAdmin
                 ->add('user', ModelListType::class)
                 ->add('firstname')
                 ->add('lastname')
+                ->add('gender')
                 ->add('locale', LocaleType::class)
                 ->add('birthDate', DatePickerType::class, [
                     'years' => range(1900, $now->format('Y')),
