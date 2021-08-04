@@ -366,7 +366,6 @@ class BasketController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($form->has('useSelected') && $form->get('useSelected')->isClicked()) {
                 $address = $form->get('addresses')->getData();
             } else {
                 $address = $form->getData();
