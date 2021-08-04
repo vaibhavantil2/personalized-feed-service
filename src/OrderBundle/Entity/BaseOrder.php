@@ -32,11 +32,6 @@ abstract class BaseOrder implements OrderInterface
     /**
      * @var string
      */
-    protected $paymentMethod;
-
-    /**
-     * @var string
-     */
     protected $deliveryMethod;
 
     /**
@@ -301,12 +296,7 @@ abstract class BaseOrder implements OrderInterface
     public function getReference()
     {
         return $this->reference;
-    }
-
-    public function setPaymentMethod($paymentMethod): void
-    {
-        $this->paymentMethod = $paymentMethod;
-    }
+    }]
 
     public function getPaymentMethod()
     {
