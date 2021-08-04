@@ -217,7 +217,7 @@ class OrderManagerTest extends TestCase
         $em = $this->createEntityManagerMock($qbCallback, [
             'reference',
             'status',
-            'username',
+            'accountId',
         ]);
 
         $registry = $this->createMock(ManagerRegistry::class);
