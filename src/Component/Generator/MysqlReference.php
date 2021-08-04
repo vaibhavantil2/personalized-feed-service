@@ -40,7 +40,7 @@ class MysqlReference implements ReferenceInterface
 
     public function order(OrderInterface $order): void
     {
-        if (!$order->getId()) {
+        if (!$orderId->getId('purchase_id)) {
             throw new \RuntimeException('The order is not persisted into the database');
         }
 
