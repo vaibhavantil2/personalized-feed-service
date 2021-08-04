@@ -425,40 +425,7 @@ class BasketController extends Controller
 
         // Show address creation / selection form
         $form = $this->createForm(AddressType::class, null, ['addresses' => $addresses->toArray()]);
-        $template = '@SonataBasket/Basket/payment_address_step.html.twig';
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            if ($form->has('useSelected') && $form->get('useSelected')->isClicked()) {
-                $address = $form->get('addresses')->getData();
-            } else {
-                $address = $form->getData();
-                $address->setType(AddressInterface::TYPE_BILLING);
-
-                $customer->addAddress($address);
-
-                $this->get('sonata.customer.manager')->save($customer);
-
-                $message = $this->get('translator')->trans('address_add_success', [], 'SonataCustomerBundle');
-                $this->get('session')->getFlashBag()->add('sonata_customer_success', $message);
-            }
-
-            $basket->setCustomer($customer);
-            $basket->setBillingAddress($address);
-            // save the basket
-            $this->basketFactory->save($basket);
-
-            return new RedirectResponse($this->generateUrl('sonata_basket_payment'));
-        }
-
-        // Set URL to be redirected to once edited address
-        $this->get('session')->set('sonata_address_redirect', $this->generateUrl('sonata_basket_payment_address'));
-
-        $this->get('sonata.seo.page')->setTitle($this->get('translator')->trans('basket_payment_title', [], 'SonataBasketBundle'));
-
-        return $this->render($template, [
-            'form' => $form->createView(),
+        $template = '@SonataB
             'addresses' => $addresses,
         ]);
     }
